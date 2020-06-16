@@ -1,3 +1,68 @@
-h2 {
-  color: green;
+@import "global.scss";
+@import "variables.scss";
+@import "mixins.scss";
+
+body {
+  padding-top: 100px;
+  background: url("../img/grid.png") repeat;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.battlefield {
+  padding: 100px 0;
+  border: 3px solid $cell-color;
+  border-radius: 50px;
+  background-color: $white-color;
+}
+
+.battlefield__title {
+  @include font-prop(36, 36);
+  margin-bottom: 50px; 
+  text-align: center;
+}
+
+.fields {
+  display: flex;
+  justify-content: center;
+}
+
+.fields__playground {
+  box-sizing: content-box;
+  position: relative;
+  width: 330px;
+  height: 330px;
+  margin: 0 20px;
+  border-collapse: collapse;
+  border: 3px solid $cell-color;
+  background: url("../img/grid.png") repeat;
+}
+
+.fields__rows-names {
+  position: absolute;
+  top: 0;
+  left: -33px;
+  width: 33px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fields__cols-names {
+  position: absolute;
+  top: -33px;
+  left: 0;
+  width: 330px;
+  height: 33px;
+  display: flex;
+}
+
+.fields__item {
+  @include font-prop(24, 33);
+  width: 33px;
+  height: 33px;
+  text-align: center;
 }

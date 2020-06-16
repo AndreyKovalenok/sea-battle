@@ -1,0 +1,36 @@
+{
+  "name": "sea-battle",
+  "version": "17.0.0",
+  "private": true,
+  "description": "Морской бой тестовой задание",
+  "devDependencies": {
+    "autoprefixer": "9.5.x",
+    "browser-sync": "2.26.x",
+    "gulp": "4.0.x",
+    "gulp-csso": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-plumber": "1.2.x",
+    "gulp-postcss": "8.0.x",
+    "gulp-posthtml": "^3.0.4",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "4.0.x",
+    "gulp-sourcemaps": "2.6.x",
+    "gulp-uglify": "^3.0.2",
+    "posthtml-include": "^1.4.3"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp start"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE 11",
+    "Firefox ESR"
+  ],
+  "engines": {
+    "node": "8.16"
+  },
+  "dependencies": {
+    "del": "^5.1.0"
+  }
+}

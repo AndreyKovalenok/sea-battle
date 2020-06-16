@@ -6,6 +6,7 @@ body {
   position: relative;
   height: 100vh;
   padding-top: 100px;
+  overflow: hidden;
   background: url("../img/grid.png") repeat;
 }
 
@@ -17,9 +18,15 @@ body {
 .battlefield {
   display: none;
   padding: 100px 0;
+  transform: translateY(-1000px);
+  transition: .7s;
   border: 3px solid $cell-color;
   border-radius: 50px;
   background-color: $white-color;
+
+  &--animation {
+    transform: translateY(0);
+  }
 
   &--active {
     display: block;
@@ -85,6 +92,11 @@ body {
   background-color: $white-color;
   border: 3px solid $cell-color;
   border-radius: 50px;
+  transition: .7s;
+
+  &--animation {
+    transform: translate(-50%, calc(-50% + 1000px));
+  }
 
   &--disabled {
     display: none;

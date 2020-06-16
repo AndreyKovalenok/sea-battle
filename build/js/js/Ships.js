@@ -31,7 +31,6 @@ export class Ships {
 
     //Добавление корабля в массив, содержащий информацию о всех кораблях
     this.player.squadron.push(this);
-    console.log(this.player.squadron);
 
     //Отображение корабля на игрвоом поле
     if (this.player.type == 'user') this.showShip();

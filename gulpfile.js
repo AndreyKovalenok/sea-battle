@@ -13,6 +13,7 @@ var autoprefixer = require("autoprefixer");
 var csso = require("gulp-csso");
 var rename = require("gulp-rename");
 var uglify = require("gulp-uglify-es").default;
+var concat = require("gulp-concat");
 var server = require("browser-sync").create();
 
 gulp.task("css", function () {
@@ -43,9 +44,7 @@ gulp.task("html", function() {
 });
 
 gulp.task("javascript", function() {
-  return gulp.src("src/js/script.js")
-    .pipe(rename("script.min.js"))
-    .pipe(uglify())
+  return gulp.src("src/js/**", { base: "src" })
     .pipe(gulp.dest("build/js"))
 });
 
@@ -75,7 +74,7 @@ gulp.task("server", function () {
   });
 
   gulp.watch("src/scss/**/*.scss", gulp.series("css"));
-  gulp.watch("src/js/*.js", gulp.series("javascript"));
+  gulp.watch("src/js/**/*.js", gulp.series("build", "refresh"));
   gulp.watch("src/img/{icon-*,htmlacademy}.svg", gulp.series("html", "refresh"));
   gulp.watch("src/*.html", gulp.series("html", "refresh"));
 });

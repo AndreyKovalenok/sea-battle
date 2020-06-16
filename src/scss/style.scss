@@ -3,6 +3,8 @@
 @import "mixins.scss";
 
 body {
+  position: relative;
+  height: 100vh;
   padding-top: 100px;
   background: url("../img/grid.png") repeat;
 }
@@ -13,10 +15,15 @@ body {
 }
 
 .battlefield {
+  display: none;
   padding: 100px 0;
   border: 3px solid $cell-color;
   border-radius: 50px;
   background-color: $white-color;
+
+  &--active {
+    display: block;
+  }
 }
 
 .battlefield__title {
@@ -65,4 +72,97 @@ body {
   width: 33px;
   height: 33px;
   text-align: center;
+}
+
+.user-name {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px 50px;
+  text-align: center;
+  background-color: $white-color;
+  border: 3px solid $cell-color;
+  border-radius: 50px;
+
+  &--disabled {
+    display: none;
+  }
+}
+
+.user-name__title {
+  @include font-prop(24, 24);
+  margin-bottom: 30px;
+}
+
+.user-name__input {
+  @include font-balsamiq;
+  @include font-prop(20, 20);
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  transition: box-shadow .3s; 
+  border: 2px solid $cell-color;
+  border-radius: 5px;
+  outline: none;
+
+  &:hover {
+    border-color: rgba($color: $cell-color, $alpha: .5);
+  }
+
+  &:active,
+  &:focus {
+    border-color:  $cell-color;
+    box-shadow: 0 0 5px 0 rgba($color: $cell-color, $alpha: 1.0);
+  }
+}
+
+.user-name__button {
+  @include font-balsamiq;
+  @include font-prop(20, 20);
+  padding: 10px 40px;
+  transition: .3s; 
+  cursor: pointer;
+  border: 2px solid $white-color;
+  border-radius: 20px;
+  outline: none;
+  background-color: $cell-color;
+  color: $white-color;
+
+  &:hover {
+    border: 2px solid $cell-color;
+    background-color: $white-color;
+    color: $black-color;
+  }
+
+  &:active {
+    border-color: rgba($color: $cell-color, $alpha: .4)
+  }
+}
+
+.ship {
+  position: absolute;
+  height: 35px;
+  border: 2px solid $black-color;
+}
+
+.singledeck { 
+  width: 35px;
+}
+
+.doubledeck {
+  width: 68px;
+}
+
+.tripledeck {
+  width: 101px;
+}
+
+.fourdeck { 
+  width: 134px;
+}
+
+.verticale {
+  transition: rotate(90deg);
+  transform-origin: 17.5px 17.5px;
 }

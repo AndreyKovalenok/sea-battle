@@ -45,7 +45,7 @@ gulp.task("html", function() {
 
 gulp.task("javascript", function() {
   return gulp.src("src/js/**", { base: "src" })
-    .pipe(gulp.dest("build/js"))
+    .pipe(gulp.dest("build"))
 });
 
 gulp.task("copy", function() {
@@ -74,7 +74,7 @@ gulp.task("server", function () {
   });
 
   gulp.watch("src/scss/**/*.scss", gulp.series("css"));
-  gulp.watch("src/js/**/*.js", gulp.series("build", "refresh"));
+  gulp.watch("src/js/**/*.js", gulp.series("javascript", "refresh"));
   gulp.watch("src/img/{icon-*,htmlacademy}.svg", gulp.series("html", "refresh"));
   gulp.watch("src/*.html", gulp.series("html", "refresh"));
 });

@@ -27,7 +27,7 @@ export class Playground {
    * Метод, генерирующий случайное число от 0 до max
    * @param {number} max - максимальне необходимое число 
    */
-  getRandomNumber = (max) => Math.floor(Math.random() * max);  
+  getRandomNumber = (max) => Math.floor(Math.random() * (max + 1));  
 
   /**
    * Метод, создающий масив рамерности rows x cols, заполненый нулями

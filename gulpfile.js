@@ -12,8 +12,6 @@ var del = require("del");
 var autoprefixer = require("autoprefixer");
 var csso = require("gulp-csso");
 var rename = require("gulp-rename");
-var uglify = require("gulp-uglify-es").default;
-var concat = require("gulp-concat");
 var server = require("browser-sync").create();
 
 gulp.task("css", function () {

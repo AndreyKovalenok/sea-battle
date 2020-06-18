@@ -48,6 +48,7 @@ export class Controller {
     ]
     /** Объект для хранения информации по обстреливаемому кораблю */
     this.resetTempShip();
+    this.user.enemyShooting = 0;
 
     this.setShootMatrix();
 
@@ -454,7 +455,11 @@ export class Controller {
     }
   }
 
-  // Поиск максимольного количетсва палуб среди кораблей
+  /**
+   * Поиск максимольного количетсва палуб среди кораблей
+   */
+
+  //Поиск максимольного количетсва палуб среди кораблей
   checkMaxDecks = () => {
     const arr = [];
     for (let i = 0, length = this.user.squadron.length; i < length; i++) {
@@ -464,7 +469,10 @@ export class Controller {
     return Math.max.apply(null, arr);
   }
 
-  // Метод, определяющий алгоритм формирования координат
+  /**
+   * Метод, определяющий алгоритм формирования координат
+   * @param {Object} coordinates - координаты выстрела
+   */
   setShootMatrixAround = (coordinates) => {
     if (this.comp.tempShip.kx === 0 && this.comp.tempShip.ky === 0) {
       if (Object.keys(this.comp.tempShip.firstHit).length === 0) {

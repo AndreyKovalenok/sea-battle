@@ -142,6 +142,32 @@ body {
     border-color:  $cell-color;
     box-shadow: 0 0 5px 0 rgba($color: $cell-color, $alpha: 1.0);
   }
+
+  &--error {
+    border-color: $error-color;
+
+    &:hover {
+      border-color: rgba($color: $error-color, $alpha: .5);
+    }
+  
+    &:active,
+    &:focus {
+      border-color:  $error-color;
+      box-shadow: 0 0 5px 0 rgba($color: $error-color, $alpha: 1.0);
+    }
+  }
+}
+
+.user-name__error-message {
+  @include font-prop(10, 10);
+  display: none;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  color: $error-color;
+
+  &--error {
+    display: block;
+  }
 }
 
 .button {

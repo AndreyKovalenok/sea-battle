@@ -2,12 +2,6 @@
   font-family: "Balsamiq Sans", "Arial", sans-serif;
 }
 
-@mixin font($font-size, $line-height, $font-weight) {
-  font-size: #{$font-size}px;
-  line-height: #{$line-height}px;
-  font-weight: $font-weight;
-}
-
 @mixin font-prop($font-size, $line-height) {
   font-size: #{$font-size}px;
   line-height: #{$line-height}px;

@@ -17,6 +17,10 @@ export class Controller {
     this.refreshBtn = refreshBtn;
   }
 
+  setUserName = (name) => {
+    this.userName = name;
+  }
+
   /**
    * Метод, генерирующий случайное число от 0 до 1
    * @param {number} max - максимальне необходимое число 
@@ -50,7 +54,7 @@ export class Controller {
     if (this.player === this.user) {
       this.comp.playground.addEventListener('click', this.shoot);
       this.comp.playground.addEventListener('contextmenu', this.setEmptyCell);
-      this.showServiseText('Вы стреляете первым.');
+      this.showServiseText(`${this.userName} стреляет первым.`);
     } else {
       this.showServiseText('Первым стреляет компьютер');
       setTimeout(() => this.shoot(), 3000);
@@ -141,8 +145,8 @@ export class Controller {
         this.enemy.matrix[coordinates.x][coordinates.y] = 3;
         
         this.text = this.player === this.user 
-          ? 'Вы промахнулись. Стреляет компьютер'
-          : 'Компьютер промахнулся. Ваш выстрел';
+          ? `${this.userName} промахнулся. Стреляет компьютер`
+          : `Компьютер промахнулся. Стреляет ${this.userName}`;
         this.showServiseText(this.text);
 
         this.player = this.player === this.user ? this.comp : this.user;
@@ -168,8 +172,8 @@ export class Controller {
 
         this.showIcons(this.enemy, coordinates, 'red-cross');
         this.text = this.player === this.user
-          ? 'Поздравялем! Вы попали. Ваш выстрел'
-          : 'Компьютер попал в ваш корабль. Выстрел компьютера';
+          ? `${this.userName} попал в корабль компьютера. Следующим стреляет ${this.userName}`
+          : `Компьютер попал в корабль ${this.userName}. Выстрел компьютера`;
         this.showServiseText(this.text);
 
         // перебор массива кораблей противника
@@ -196,11 +200,11 @@ export class Controller {
         }
 
         // Проверка на окончание игры
-        if (this.enemy.squadron.length === 10) {
+        if (this.enemy.squadron.length === 0) {
 
           this.text = this.player === this.user 
-            ? 'Поздравляем! Вы выиграли'
-            : 'К сожалению, вы проиграли';
+            ? `Поздравляем! ${this.userName} выиграл`
+            : 'К сожалению, выиграл компьютер';
           this.showServiseText(this.text);
           this.refreshBtn.classList.add('battlefield__button--active');
 
@@ -258,7 +262,7 @@ export class Controller {
               this.setShootMatrixAround(coordinates);
             }
 
-            setTimeout(() => this.shoot(), 1000);
+            setTimeout(() => this.shoot(), 2000);
           }
         }
         break;

@@ -5,8 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Морской бой</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h2>Морской бой 2</h2>
+  <div class="wrapper">
+    <div class="battlefield">
+
+      <h1 class="battlefield__title">Морской бой</h1>
+
+      <div class="fields">
+        <div class="fields__playground fields--user">
+          <ul class="fields__rows-names">
+            <li class="fields__item">А</li>
+            <li class="fields__item">Б</li>
+            <li class="fields__item">В</li>
+            <li class="fields__item">Г</li>
+            <li class="fields__item">Д</li>
+            <li class="fields__item">Е</li>
+            <li class="fields__item">Ж</li>
+            <li class="fields__item">З</li>
+            <li class="fields__item">И</li>
+            <li class="fields__item">К</li>
+          </ul>
+          <ul class="fields__cols-names">
+            <li class="fields__item">1</li>
+            <li class="fields__item">2</li>
+            <li class="fields__item">3</li>
+            <li class="fields__item">4</li>
+            <li class="fields__item">5</li>
+            <li class="fields__item">6</li>
+            <li class="fields__item">7</li>
+            <li class="fields__item">8</li>
+            <li class="fields__item">9</li>
+            <li class="fields__item">10</li>
+          </ul>
+        </div>
+        <div class="fields__playground fields--comp">
+          <ul class="fields__rows-names">
+            <li class="fields__item">А</li>
+            <li class="fields__item">Б</li>
+            <li class="fields__item">В</li>
+            <li class="fields__item">Г</li>
+            <li class="fields__item">Д</li>
+            <li class="fields__item">Е</li>
+            <li class="fields__item">Ж</li>
+            <li class="fields__item">З</li>
+            <li class="fields__item">И</li>
+            <li class="fields__item">К</li>
+          </ul>
+          <ul class="fields__cols-names">
+            <li class="fields__item">1</li>
+            <li class="fields__item">2</li>
+            <li class="fields__item">3</li>
+            <li class="fields__item">4</li>
+            <li class="fields__item">5</li>
+            <li class="fields__item">6</li>
+            <li class="fields__item">7</li>
+            <li class="fields__item">8</li>
+            <li class="fields__item">9</li>
+            <li class="fields__item">10</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="battlefield__text"></p>
+
+      <button id="refresh" class="button battlefield__button">Начать заново</button>
+
+    </div>
+  </div>
+
+  <div class="user-name">
+    <p class="user-name__title">Введите ваше имя:</p>
+    <input type="text" class="user-name__input">
+    <p class="user-name__error-message">Имя должно содержать не менее 3-х символов</p>
+    <button id="start" class="button">Начать</button>
+  </div>
+
+  <script type="module" src="js/script.js"></script>
 </body>
 </html>

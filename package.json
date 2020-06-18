@@ -7,6 +7,7 @@
     "autoprefixer": "9.5.x",
     "browser-sync": "2.26.x",
     "gulp": "4.0.x",
+    "gulp-concat": "^2.6.1",
     "gulp-csso": "^4.0.1",
     "gulp-htmlmin": "^5.0.1",
     "gulp-plumber": "1.2.x",
@@ -15,7 +16,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "4.0.x",
     "gulp-sourcemaps": "2.6.x",
-    "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "^2.0.0",
     "posthtml-include": "^1.4.3"
   },
   "scripts": {

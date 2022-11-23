@@ -5,7 +5,7 @@
   "description": "Морской бой тестовой задание",
   "devDependencies": {
     "autoprefixer": "9.5.x",
-    "browser-sync": "2.26.x",
+    "browser-sync": "2.27.x",
     "gulp": "4.0.x",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^4.0.1",
